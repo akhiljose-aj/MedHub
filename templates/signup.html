@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+     <title>MedHub</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
+     <script>
+function showpas() {
+  var x = document.getElementById("mypas");
+  if (x.type === "password")
+  {
+    x.type = "text";
+  }
+  else {
+    x.type = "password";id="cf-submit"
+  }
+}
+</script>
+<style>
+     .btn1{
+    background-color: #a5c422;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 17px 185px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+     }
+     .btn1:hover{
+    background-color: #393939;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 18px 190px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    }
+    .img-responsive1{
+    display:block;
+    max-width:120%;
+    height:93%;
+    }
+</style>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to MedHub</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> +91-8078152057</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 08:00 AM - 08:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+                    <!-- lOGO TEXT HERE -->
+                    <a href="../" class="navbar-brand" style="position:relative;left:-1000px;top:30px;">Med<i class="fa fa-h-square"></i>ub</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li class="appointment-btn"><a href="../">HOME</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                         <img src="{% static 'images/news-image1.jpg' %}" alt="" class="img-responsive1" style="position:relative;left:-80px;">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="POST" action="./signup2">
+                              {% csrf_token %}
+                              <!-- SECTION TITLE -->
+                              <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>SIGN UP</h2>
+                              </div>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                    <div class="col-md-6 col-sm-6">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" name="name" placeholder="Enter your full name" required>
+                                   </div>
+                                    <div class="col-md-6 col-sm-6">
+
+                                        <label>Phone</label>
+                                        <input type="tel" class="form-control" name="mob" placeholder="Phone no." required min="10" pattern="[0-9]{10}">
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="name">Email</label>
+                                        <input type="email" class="form-control" name="email" placeholder="Email" required>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <label for="name">Username</label>
+                                        <input type="text" class="form-control" id="name" name="uname" placeholder="User Name" required>
+                                   </div>
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                              <label>Password</label>
+                              <input type="password" class="form-control" id="mypas" name="pasw" placeholder="Password" required>
+                                   </div>
+                              <div class="col-md-12 col-sm-12">
+                                   <input type="checkbox" onclick="showpas()" style="position:relative; top:-65px; left:480px;">
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                                   <label style="position:relative;top:-83px;left:20px;">Male</label><input type="radio" name="gender" value="male" required  style="position:relative;top:-65px;left:25px;">
+                                   <label style="position:relative;top:-83px;left:80px;">Female</label><input type="radio" name="gender" value="female" required style="position:relative;top:-65px;left:85px;">
+                              </div>
+                              <div class="col-md-12 col-sm-12">
+                              <input type="submit" class="btn1" id="cf-submit" value="SignUp" style="position:relative; top:-50px;left:25px;">
+                              </div>
+                              <br>
+                    </form>
+                    </div>
+               </div>
+          </div>
+     </section>
+
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>MedHub Pvt.Ltd, 2nd floor Bos Motors<br>Kaloor, Kochi - 682017<br>Ernakulam, Kerala</p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> +91-8078152057</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Important Links</h4>
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Book An Appoinment</h5></a>
+                                        <span>30% discount for the <br>First appoinment booking</span>
+                                   </div>
+                              </div>
+
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Facilities Provided</h5></a>
+                                        <span>Know in detail about <br> The facilites we provide</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                   <p>Monday - Friday <span>08:00 AM - 08:00 PM</span></p>
+                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
+                                   <p>Sunday <span>Closed</span></p>
+                              </div>
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2023 MedHub</p>
+                              </div>
+                         </div>
+                         </div>
+                         <div class="col-md-5 col-sm-1 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

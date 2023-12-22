@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+     <title>MedHub</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to MedHub</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> +91-8078152057</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 08:00 AM - 08:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="../" class="navbar-brand">Med<i class="fa fa-h-square"></i>ub</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="#about" class="smoothScroll">About Us</a></li>
+                         <li><a href="#team" class="smoothScroll">Doctors</a></li>
+                         <li><a href="#google-map" class="smoothScroll">Contact</a></li>
+                         <li><a href="./bk_details" class="smoothScroll">Booking<br>Details</a></li>
+                         <li><a href="./logout" class="smoothScroll">Logout</a></li>
+                         <li class="appointment-btn"><a href="./app">Make an appointment</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+
+
+     <!-- HOME -->
+     <section id="home" class="slider" data-stellar-background-ratio="0.5">
+          <div class="container">
+               <div class="row">
+
+                         <div class="owl-carousel owl-theme">
+                              <div class="item item-first">
+                                   <div class="caption">
+                                        <div class="col-md-offset-1 col-md-10">
+                                             <h3>Let's make life happier</h3>
+                                             <h1>Healthy Living</h1>
+                                             <a href="#team" class="section-btn btn btn-default smoothScroll">Meet Our Doctors</a>
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- ABOUT -->
+     <section id="about">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.6s">Welcome to Med<i class="fa fa-h-square"></i>ub</h2>
+                              <div class="wow fadeInUp" data-wow-delay="0.8s">
+                                   <p>
+                                        Welcome to MedHub –
+                                        your gateway to convenient and efficient healthcare management.We understand the importance of timely access to medical care,
+                                        and our platform is designed to simplify the appointment booking process for you.
+                                        With just a few clicks, you can schedule appointments with renowned healthcare professionals,
+                                        ensuring that you receive the care you need when you need it.</p>
+
+                                   <p>
+                                        Experience the ease of navigating our user-friendly interface,
+                                        explore a wide range of available specialists, and take control of your healthcare
+                                        journey. Your well-being is our priority, and we are committed to providing
+                                        you with a seamless and accessible way to manage your health appointments.
+                                        Trust us to connect you with the right healthcare professionals,
+                                        so you can focus on what matters most – your health."
+
+                                   </p>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+
+     <!-- TEAM -->
+     <section id="team" data-stellar-background-ratio="1">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <div class="about-info">
+                              <h2 class="wow fadeInUp" data-wow-delay="0.1s">Our Doctors</h2>
+                         </div>
+                    </div>
+
+                    <div class="clearfix"></div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.2s">
+                              <img src="{% static 'images/team-image1.jpg' %}" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Nate Baston</h3>
+                                        <p>General Principal</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 010-020-0120</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="#">general@company.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-linkedin-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.4s">
+                              <img src="{% static 'images/team-image2.jpg' %}" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Jason Stewart</h3>
+                                        <p>Pregnancy</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 010-070-0170</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="#">pregnancy@company.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-facebook-square"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                             <li><a href="#" class="fa fa-flickr"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-6">
+                         <div class="team-thumb wow fadeInUp" data-wow-delay="0.6s">
+                              <img src="{% static 'images/team-image3.jpg' %}" class="img-responsive" alt="">
+
+                                   <div class="team-info">
+                                        <h3>Miasha Nakahara</h3>
+                                        <p>Cardiology</p>
+                                        <div class="team-contact-info">
+                                             <p><i class="fa fa-phone"></i> 010-040-0140</p>
+                                             <p><i class="fa fa-envelope-o"></i> <a href="#">cardio@company.com</a></p>
+                                        </div>
+                                        <ul class="social-icon">
+                                             <li><a href="#" class="fa fa-twitter"></a></li>
+                                             <li><a href="#" class="fa fa-envelope-o"></a></li>
+                                        </ul>
+                                   </div>
+
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </section>
+
+     <!-- GOOGLE MAP -->
+     <section id="google-map">
+     <!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2368106510485!2d76.29814807400717!3d9.997287473083501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d166d3a98e3%3A0xc8b2f4d8eae5cacd!2sJawaharlal%20Nehru%20International%20Stadium%20Kochi!5e0!3m2!1sen!2sin!4v1700723418655!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </section>
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>MedHub Pvt.Ltd, 2nd floor Bos Motors<br>Kaloor, Kochi - 682017<br>Ernakulam, Kerala</p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> +91-8078152057</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">info@medhubcompany.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Important Links</h4>
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Book An Appoinment</h5></a>
+                                        <span>30% discount for the <br>First appoinment booking</span>
+                                   </div>
+                              </div>
+
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Facilities Provided</h5></a>
+                                        <span>Know in detail about <br> The facilites we provide</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                   <p>Monday - Friday <span>08:00 AM - 08:00 PM</span></p>
+                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
+                                   <p>Sunday <span>Closed</span></p>
+                              </div>
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2023 MedHub</p>
+                              </div>
+                         </div>
+<!--                         <div class="col-md-6 col-sm-6">-->
+<!--                              <div class="footer-link"> -->
+<!--                                   <a href="#">Laboratory Tests</a>-->
+<!--                                   <a href="#">Departments</a>-->
+<!--                                   <a href="#">Insurance Policy</a>-->
+<!--                                   <a href="#">Careers</a>-->
+<!--                              </div>-->
+                         </div>
+                         <div class="col-md-5 col-sm-1 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

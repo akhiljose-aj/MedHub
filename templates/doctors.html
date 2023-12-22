@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+     <title>MedHub</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+
+     <style>
+table{
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+ .btn1{
+    background-color: #a5c422;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 16px 175px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+     }
+     .btn1:hover{
+    background-color: #393939;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 17px 180px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    }
+    .img-responsive1{
+    display:block;
+    max-width:100%;
+    height:100%;
+    }
+    input#fileinp{
+     display:none;
+    }
+    .file1{
+     border:1px solid red;
+     cursor:pointer;
+    }
+</style>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to MedHub</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> +91-8078152057</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 08:00 AM - 08:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Med<i class="fa fa-h-square"></i>ub</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li class="smoothScroll"><a href="./regdoc">Registered<br>&nbsp;&nbsp;&nbsp;Doctors</a></li>
+                         <li class="smoothScroll"><a href="./adm2">Users</a></li>
+                         <li class="smoothScroll"><a href="./adm_app">Appointments</a></li>
+                         <li class="appointment-btn"><a href="./logout">Logout</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                         <img src="{% static 'images/news-image3.jpg' %}" alt="" class="img-responsive1" style="position:relative;left:-30px;">
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                         <div class="section-title wow fadeInUp" data-wow-delay="0.4s">
+                                   <h2>Doctor</h2>
+                              </div>
+                    <form id="appointment-form" role="form" method="POST" action="./docform" enctype="multipart/form-data">
+                         {% csrf_token %}
+                         <div class="wow fadeInUp" data-wow-delay="0.8s">
+                              <div class="col-md-12 col-sm-12">
+                                   <label>Doctor Name</label>
+                                   <input type="text" class="form-control" name="dname" placeholder="Enter name of the doctor" required>
+                              </div>
+                         </div>
+                         <div class="col-md-6 col-sm-6">
+                         <label>Doctor ID</label>
+                         <input type="text" class="form-control" name="did" placeholder="Enter Doctor ID" required>
+                              </div>
+                         <div class="col-md-6 col-sm-6" style="position:relative;top:27px;">
+                              <label for="fileinp"><i class="fa fa-upload"></i> Upload Photo</label>
+                              <input type="file" name="dpic" id="fileinp" class="file1" required><br>
+                              <span>
+                                   <strong>Choosen File:</strong>
+                                   <span id="fname">None</span>
+                              </span>
+                              <script>
+                                   let inputfile=document.getElementById('fileinp');
+                                   let filename=document.getElementById('fname');
+                                   inputfile.addEventListener('change',function(event){
+                                        let uploadfile=event.target.files[0].name;
+                                        filename.textContent=uploadfile;
+                                   })
+
+                              </script>
+                         </div>
+                              <br><br>
+                         <div class="col-md-12 col-sm-12">
+                              <label>Select Department</label>
+                              <select class="form-control" name="dep" required>
+                                   <option selected disabled>Select</option>
+                                   <option value="General Health">General Health</option>
+                                   <option value="Orthology">Orthology</option>
+                                   <option value="Cardiology">Cardiology</option>
+                                   <option value="Dental">Dental</option>
+                                   <option value="Gynaecology">Gynaecology</option>
+                                   <option value="Pediatric">Pediatric</option>
+                                   <option value="Medical Research">Medical Research</option>
+                              </select>
+                         </div>
+                         <br>
+                         <div class="col-md-12 col-sm-12">
+                         <input type="submit" class="btn1" value="Submit">
+                         </div>
+                         <br>
+                    </form>
+                    </div>
+                    <div class="col-md-10 col-sm-10">
+                    {% if messages %}
+						{% for message in messages %}
+							<div class="alert alert-info alert-dismissible">
+							{% if message.tags %}{% endif %}
+							<button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+							<strong> {{ message }}</strong></div>
+						{% endfor %}
+					{% endif %}
+                    </div>
+               </div>
+          </div>
+     </section>
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>MedHub Pvt.Ltd, 2nd floor Bos Motors<br>Kaloor, Kochi - 682017<br>Ernakulam, Kerala</p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> +91-8078152057</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Important Links</h4>
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Book An Appoinment</h5></a>
+                                        <span>30% discount for the <br>First appoinment booking</span>
+                                   </div>
+                              </div>
+
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Facilities Provided</h5></a>
+                                        <span>Know in detail about <br> The facilites we provide</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                   <p>Monday - Friday <span>08:00 AM - 08:00 PM</span></p>
+                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
+                                   <p>Sunday <span>Closed</span></p>
+                              </div>
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2023 MedHub</p>
+                              </div>
+                         </div>
+                         </div>
+                         <div class="col-md-5 col-sm-1 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

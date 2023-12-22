@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     {% load static %}
+     <title>MedHub</title>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="Tooplate">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+     <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.carousel.css' %}">
+     <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="{% static 'css/tooplate-style.css' %}">
+     <style>
+     .btn1{
+    background-color: #a5c422;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 17px 185px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+     }
+     .btn1:hover{
+    background-color: #393939;
+    color: #ffffff;
+    border: none;
+    text-decoration: none;
+    border-radius: 3px;
+    box-shadow: none;
+    font-size: 14px;
+    margin-bottom: 15px;
+    transition: all ease-in-out 0.4s;
+    padding: 18px 190px;
+    margin: 3px 0 0 20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    }
+    .img-responsive1{
+    display:block;
+    max-width:120%;
+    height:93%;
+    }
+    .img-responsive1{
+    display:block;
+    max-width:100%;
+    max-height:100%;
+    }
+     </style>
+     <script type="text/javascript">
+     window.onload=function(){
+     var today=new
+     Date().toISOString().split('T')[0];
+     document.getElementsByName("setTodaysDate")[0].setAttribute('min',today);
+     }
+     </script>
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+     <!-- PRE LOADER -->
+     <section class="preloader">
+          <div class="spinner">
+
+               <span class="spinner-rotate"></span>
+
+          </div>
+     </section>
+
+
+     <!-- HEADER -->
+     <header>
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-5">
+                         <p>Welcome to MedHub</p>
+                    </div>
+
+                    <div class="col-md-8 col-sm-7 text-align-right">
+                         <span class="phone-icon"><i class="fa fa-phone"></i> +91-8078152057</span>
+                         <span class="date-icon"><i class="fa fa-calendar-plus-o"></i> 08:00 AM - 08:00 PM (Mon-Fri)</span>
+                         <span class="email-icon"><i class="fa fa-envelope-o"></i> <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">info@medhubcompany.com</a></span>
+                    </div>
+
+               </div>
+          </div>
+     </header>
+
+
+     <!-- MENU -->
+     <section class="navbar navbar-default navbar-static-top" role="navigation">
+          <div class="container">
+
+               <div class="navbar-header">
+                    <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                         <span class="icon icon-bar"></span>
+                    </button>
+
+                    <!-- lOGO TEXT HERE -->
+                    <a href="index.html" class="navbar-brand">Med<i class="fa fa-h-square"></i>ub</a>
+               </div>
+
+               <!-- MENU LINKS -->
+               <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                         <li><a href="./home2" class="smoothScroll">Home</a></li>
+                         <li class="appointment-btn"><a href="./app">Make an appointment</a></li>
+                    </ul>
+               </div>
+
+          </div>
+     </section>
+     <!-- MAKE AN APPOINTMENT -->
+     <section id="appointment" data-stellar-background-ratio="3">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-6 col-sm-6">
+                         <img src="{% static 'images/news-image3.jpg' %}" class="img-responsive1" alt="">
+                    </div>
+
+                    <div class="col-md-6 col-sm-6">
+                         <!-- CONTACT FORM HERE -->
+                         <form id="appointment-form" role="form" method="post" action="./book">
+                              {% csrf_token %}
+                              <!-- SECTION TITLE -->
+                              <div class="section-title">
+                                   <h2>Make an appointment</h2>
+                              </div>
+                              <div class="wow fadeInUp">
+                                   <div class="col-md-6 col-sm-6">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control" id="app_name" name="name" placeholder="Full Name">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" id="app_mail" name="email" placeholder="Your Email">
+                                   </div>
+
+                                   <div class="col-md-6 col-sm-6">
+                                        <label>Select Date</label>
+                                        <input type="date" name="setTodaysDate" class="form-control">
+                                   </div>
+                         <div class="col-md-12 col-sm-12">
+                              <label>Select Department</label>
+                              <select class="form-control" name="dep" required>
+                                   <option selected disabled>Select</option>
+                                   <option value="General Health">General Health</option>
+                                   <option value="Orthology">Orthology</option>
+                                   <option value="Cardiology">Cardiology</option>
+                                   <option value="Dental">Dental</option>
+                                   <option value="Gynaecology">Gynaecology</option>
+                                   <option value="Pediatric">Pediatric</option>
+                                   <option value="Medical Research">Medical Research</option>
+                              </select>
+                         </div>
+                                             <br>
+                                   <div class="col-md-12 col-sm-12">
+                                   <label style="position:relative;top:-20px;left:10px;">Male</label><input type="radio" name="gender" value="male" required style="position:relative;top:-2px;left:13px;">
+                                   <label style="position:relative;top:-20px;left:25px;">Female</label><input type="radio" name="gender" value="female" required style="position:relative;top:-2px;left:27px;">
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <label>Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone"  pattern="[0-9]{10}" required>
+                                        <label for="Message">Additional Details</label>
+                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="mention your disease,age..." required></textarea>
+                                   </div>
+                                   <div class="col-md-4 col-sm-4 wow fadeInUp" data-wow-delay="0.8s">
+                                        <script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_NE9jtzL6tk9rez" async> </script>
+                                   </div>
+                                   <div class="col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="0.8s" style="position:relative;top:-10px;left:-15px;">
+                                        <h5 ><b>Make sure to copy the payment ID and paste it in the box below!</b></h5>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <input type="text" class="form-control" name="pay" placeholder="Payment ID" required>
+                                   </div>
+                                   <div class="col-md-12 col-sm-12">
+                                        <input type="submit" class="btn1" value="Book Appointment">
+                                        <br><br>
+                                   </div>
+                              </div>
+                       </form>
+                    </div>
+                              <br>
+               <div class="col-md-10 col-sm-10">
+                    <p>
+               {% if messages %}
+                   {% for message in messages %}
+                       <div class="alert alert-info alert-dismissible">
+                       {% if message.tags %}{% endif %}
+                       <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                       <strong> {{ message }}</strong></div>
+                   {% endfor %}
+               {% endif %}
+               </div>
+               </div>
+          </div>
+     </section>
+
+
+     <!-- GOOGLE MAP -->
+     <!-- How to change your own map point
+            1. Go to Google Maps
+            2. Click on your location point
+            3. Click "Share" and choose "Embed map" tab
+            4. Copy only URL and paste it within the src="" field below
+	-->
+
+     <section id="google-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.2368106510485!2d76.29814807400717!3d9.997287473083501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080d166d3a98e3%3A0xc8b2f4d8eae5cacd!2sJawaharlal%20Nehru%20International%20Stadium%20Kochi!5e0!3m2!1sen!2sin!4v1700723418655!5m2!1sen!2sin" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+     </section>
+
+
+     <!-- FOOTER -->
+     <footer data-stellar-background-ratio="5">
+          <div class="container">
+               <div class="row">
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Contact Info</h4>
+                              <p>MedHub Pvt.Ltd, 2nd floor Bos Motors<br>Kaloor, Kochi - 682017<br>Ernakulam, Kerala</p>
+
+                              <div class="contact-info">
+                                   <p><i class="fa fa-phone"></i> +91-8078152057</p>
+                                   <p><i class="fa fa-envelope-o"></i> <a href="#">info@medhubcompany.com</a></p>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <h4 class="wow fadeInUp" data-wow-delay="0.4s">Important Links</h4>
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Book An Appoinment</h5></a>
+                                        <span>30% discount for the <br>First appoinment booking</span>
+                                   </div>
+                              </div>
+
+                              <div class="latest-stories">
+                                   <div class="stories-image">
+                                        <a href="#"><img src="{% static 'images/news-image.jpg' %}" class="img-responsive" alt=""></a>
+                                   </div>
+                                   <div class="stories-info">
+                                        <a href="#"><h5>Facilities Provided</h5></a>
+                                        <span>Know in detail about <br> The facilites we provide</span>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="col-md-4 col-sm-4">
+                         <div class="footer-thumb">
+                              <div class="opening-hours">
+                                   <h4 class="wow fadeInUp" data-wow-delay="0.4s">Opening Hours</h4>
+                                   <p>Monday - Friday <span>08:00 AM - 08:00 PM</span></p>
+                                   <p>Saturday <span>09:00 AM - 08:00 PM</span></p>
+                                   <p>Sunday <span>Closed</span></p>
+                              </div>
+
+                              <ul class="social-icon">
+                                   <li><a href="#" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                                   <li><a href="#" class="fa fa-twitter"></a></li>
+                                   <li><a href="#" class="fa fa-instagram"></a></li>
+                              </ul>
+                         </div>
+                    </div>
+
+                    <div class="col-md-12 col-sm-12 border-top">
+                         <div class="col-md-4 col-sm-6">
+                              <div class="copyright-text">
+                                   <p>Copyright &copy; 2023 MedHub</p>
+                              </div>
+                         </div>
+<!--                         <div class="col-md-6 col-sm-6">-->
+<!--                              <div class="footer-link"> -->
+<!--                                   <a href="#">Laboratory Tests</a>-->
+<!--                                   <a href="#">Departments</a>-->
+<!--                                   <a href="#">Insurance Policy</a>-->
+<!--                                   <a href="#">Careers</a>-->
+<!--                              </div>-->
+                         </div>
+                         <div class="col-md-5 col-sm-1 text-align-center">
+                              <div class="angle-up-btn">
+                                  <a href="#top" class="smoothScroll wow fadeInUp" data-wow-delay="1.2s"><i class="fa fa-angle-up"></i></a>
+                              </div>
+                         </div>
+                    </div>
+
+               </div>
+          </div>
+     </footer>
+
+     <!-- SCRIPTS -->
+     <script src="{% static 'js/jquery.js' %}"></script>
+     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+     <script src="{% static 'js/jquery.sticky.js' %}"></script>
+     <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+     <script src="{% static 'js/wow.min.js' %}"></script>
+     <script src="{% static 'js/smoothscroll.js' %}"></script>
+     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+     <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>
